@@ -1,8 +1,8 @@
 import dotEnv from "dotenv";
-ai = require("apiai")(process.env.APIAI_TOKEN);
-import OpenAI from "openai";
+import apiai from "apiai";
 
-const openai = new OpenAI();
+const ai = apiai(process.env.APIAI_TOKEN);
+import OpenAI from "openai";
 
 async function main() {
   const completion = await openai.chat.completions.create({
