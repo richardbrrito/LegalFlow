@@ -18,12 +18,12 @@ function showSlide(n) {
     slides[i].classList.remove("active");
   }
   slides[slideIndex - 1].classList.add("active");
-}
+}                       
 
 document.addEventListener("DOMContentLoaded", function () {
   let prevButton = document.querySelector(".prev");
   let nextButton = document.querySelector(".next");
-
+                                                     
   prevButton.addEventListener("click", function () {
     moveSlide(-1);
   });

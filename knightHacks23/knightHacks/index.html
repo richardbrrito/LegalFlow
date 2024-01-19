@@ -64,30 +64,23 @@
     </section>
     <section class="userInput">
       <h1>User Input Here</h1>
+      <div id = "chat-window">
+        <div class = "main-title"> Chat Bot</div> 
+      <div id = 'chat-messages'></div>
+      <form id = "chat-form">
+        <input
+        type = 'text'
+        id = 'chat-input'
+        autoComplete = 'off'
+        placeHolder = 'Type message here...'
+        required
+        />
+        <button type = 'submit'>Send</button>
+      </form>
+       </div>
+       <scrips></scrips>
 
 
-      <script>
-        async function getCompletion() {
-          const prompt = document.getElementById('prompt').value;
-          try {
-            const response = await fetch('/api/completion', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({ prompt: prompt })
-            });
-            const completion = await response.text();
-            document.getElementById('response').innerText = completion;
-          } catch (error) {
-            console.error('Error:', error);
-          }
-        }
-      </script>
-      
-      <input id="prompt" type="text">
-      <button onclick="getCompletion()">Submit</button>
-      <p id="response"></p>
     </section>
 
     <div class="footer">
