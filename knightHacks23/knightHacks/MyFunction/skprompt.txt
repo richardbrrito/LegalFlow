@@ -1,5 +1,0 @@
-<Enter your prompt here>
-
-[INPUT]
-{{$input}}
-[END INPUT]

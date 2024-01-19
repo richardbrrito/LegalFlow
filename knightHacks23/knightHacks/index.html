@@ -10,6 +10,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+      <link rel="icon" href="/favicon.io.png">
   </head>
 
   <body>
@@ -63,6 +64,34 @@
     </section>
     <section class="userInput">
       <h1>User Input Here</h1>
+
+
+      <script>
+        async function getCompletion() {
+          const prompt = document.getElementById('prompt').value;
+          try {
+            const response = await fetch('/api/completion', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ prompt: prompt })
+            });
+            const completion = await response.text();
+            document.getElementById('response').innerText = completion;
+          } catch (error) {
+            console.error('Error:', error);
+          }
+        }
+      </script>
+      
+      <input id="prompt" type="text">
+      <button onclick="getCompletion()">Submit</button>
+      <p id="response"></p>
+
+
+
+      
 
     </section>
 
